@@ -71,5 +71,29 @@ void PhoneBook::SEARCH()
 
 void PhoneBook::ADD()
 {
+    std::string fn;
+    std::string ln;
+    std::string nn;
+    std::string pn;
+    std::string s;
+
+    std::cout << "Input your FirstName : ";
+    std::cin >> fn;
+
+    std::cout << "Input your LastName : ";
+    std::cin >> ln;
+
+    std::cout << "Input your NickName : ";
+    std::cin >> nn;
+
+    std::cout << "Input your PhoneNumber : ";
+    std::cin >> pn;
+
+    std::cout << "Input your Secret : ";
+    std::cin >> s;
+
+    Contact tmp(fn, ln, nn, pn, s);
     
+    if (size < 8)
+        
 }

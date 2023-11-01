@@ -18,6 +18,10 @@ class PhoneBook {
         ~PhoneBook();
         void SEARCH();
         void ADD();
+        int getSize();
+        void setSize(int s);
+        int getOld();
+        void setOld(int o);
 };
 
 #endif
