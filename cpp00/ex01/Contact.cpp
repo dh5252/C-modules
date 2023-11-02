@@ -33,7 +33,12 @@ std::string Contact::getNickname()
     return this->nickname;
 }
 
-void    Contact::show()
+std::string Contact::getPhoneNumber()
 {
-    std::cout << getFirstname() << " " << getLastname() << " " << getNickname() << std::endl;
+    return this->phoneNumber;
+}
+
+std::string Contact::getSecret()
+{
+    return this->secret;
 }

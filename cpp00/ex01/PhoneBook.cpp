@@ -22,26 +22,32 @@ void PhoneBook::showContact(int index)
     std::string ln = cont.getLastname();
     std::string nn = cont.getNickname();
     
-    std::cout << index << "|";
-    for (size_t i = 0 ; i < 10 && i < fn.length() ; i++)
+    std::cout << index << "         |";
+    for (size_t i = 0 ; i < 10 ; i++)
     {
-        if (i == 9)
+        if (i >= fn.length())
+            std::cout << " ";
+        else if (i == 9)
             std::cout << ".";
         else
             std::cout << fn[i];
     }
     std::cout << "|";
-    for (size_t i = 0 ; i < 10 && i < ln.length() ; i++)
+    for (size_t i = 0 ; i < 10 ; i++)
     {
-        if (i == 9)
+        if (i >= ln.length())
+            std::cout << " ";
+        else if (i == 9)
             std::cout << ".";
         else
             std::cout << ln[i];
     }
     std::cout << "|";
-    for (size_t i = 0 ; i < 10 && i < nn.length() ; i++)
+    for (size_t i = 0 ; i < 10 ; i++)
     {
-        if (i == 9)
+        if (i >= nn.length())
+            std::cout << " ";
+        else if (i == 9)
             std::cout << ".";
         else
             std::cout << nn[i];
@@ -63,15 +69,22 @@ void PhoneBook::SEARCH()
         std::cout << "\nInput number! : " << std::flush;
         std::cin.clear();
         std::cin.ignore(9223372036854775807, '\n');
-        std::cout << "\nindex error\n";
+        std::cout << "index error\n";
         return;
     }
     if (index >= 0 && index < size)
     {
-        std::cout << "\nContact you want : ";
-        showContact(index);
+        std::cout << "\nContact you want : \n";
+        std::cout << "FirstName : " << contacts[index].getFirstname() << "\n";
+        std::cout << "LastName : " << contacts[index].getLastname() << "\n";
+        std::cout << "NickName : " << contacts[index].getNickname() << "\n";
+        std::cout << "PhoneNumber : " << contacts[index].getPhoneNumber() << "\n";
+        std::cout << "Secret : Secret is secret!"  << "\n";
         std::cout << "\n";
     }
+    else
+        std::cout << "\nindex is not valid\n";
+    
     return ;
 }
 
