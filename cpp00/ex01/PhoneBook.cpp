@@ -2,10 +2,6 @@
 
 PhoneBook::PhoneBook()
 {
-}
-
-PhoneBook::PhoneBook(int old, int size)
-{
     this->old = 0;
     this->size = 0;
 }
@@ -27,7 +23,7 @@ void PhoneBook::showContact(int index)
     std::string nn = cont.getNickname();
     
     std::cout << index << "|";
-    for (int i = 0 ; i < 10 && i < fn.length() ; i++)
+    for (size_t i = 0 ; i < 10 && i < fn.length() ; i++)
     {
         if (i == 9)
             std::cout << ".";
@@ -35,7 +31,7 @@ void PhoneBook::showContact(int index)
             std::cout << fn[i];
     }
     std::cout << "|";
-    for (int i = 0 ; i < 10 && i < ln.length() ; i++)
+    for (size_t i = 0 ; i < 10 && i < ln.length() ; i++)
     {
         if (i == 9)
             std::cout << ".";
@@ -43,7 +39,7 @@ void PhoneBook::showContact(int index)
             std::cout << ln[i];
     }
     std::cout << "|";
-    for (int i = 0 ; i < 10 && i < nn.length() ; i++)
+    for (size_t i = 0 ; i < 10 && i < nn.length() ; i++)
     {
         if (i == 9)
             std::cout << ".";
@@ -57,14 +53,24 @@ void PhoneBook::SEARCH()
 {
     int index;
 
+    std::cout << "All Contacts : \n\n";
     for (int i = 0 ; i < size ; i++)
         showContact(i);
-    std::cout << "input index : ";
+    std::cout << "\ninput index : ";
     std::cin >> index;
-    if (index >= size)
+    if (std::cin.fail())
     {
-        std::cout << "index error\n";
+        std::cout << "\nInput number! : " << std::flush;
+        std::cin.clear();
+        std::cin.ignore(9223372036854775807, '\n');
+        std::cout << "\nindex error\n";
         return;
+    }
+    if (index >= 0 && index < size)
+    {
+        std::cout << "\nContact you want : ";
+        showContact(index);
+        std::cout << "\n";
     }
     return ;
 }
@@ -92,8 +98,14 @@ void PhoneBook::ADD()
     std::cout << "Input your Secret : ";
     std::cin >> s;
 
+    std::cout << "Done.\n";
+
     Contact tmp(fn, ln, nn, pn, s);
-    
     if (size < 8)
-        
+        contacts[size++] = tmp;
+    else
+    {
+        contacts[old] = tmp;
+        old = (old + 1) % 8;
+    }
 }
