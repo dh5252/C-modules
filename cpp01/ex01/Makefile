@@ -6,7 +6,7 @@
 #    By: cahn <cahn@student.42.fr>                  +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/11/11 14:40:23 by cahn              #+#    #+#              #
-#    Updated: 2023/11/11 15:28:33 by cahn             ###   ########.fr        #
+#    Updated: 2023/11/12 17:44:34 by cahn             ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,7 +16,7 @@ CC = c++
 RM = rm -f
 CPPFLAGS = -Wall -Wextra -Werror -std=c++98 -I./includes
 
-NAME = Account
+NAME = ex01
 
 all: $(NAME)
 
