@@ -1,11 +1,11 @@
 
-SRC = main.cpp ClapTrap.cpp
+SRC = main.cpp ClapTrap.cpp ScavTrap.cpp
 OBJ = $(SRC:.cpp=.o)
 CC = c++
 RM = rm -f
 CPPFLAGS = -Wall -Wextra -Werror -std=c++98 -I./includes
 
-NAME = ex00
+NAME = ex01
 
 all: $(NAME)
 

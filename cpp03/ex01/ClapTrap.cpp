@@ -7,7 +7,7 @@ ClapTrap::ClapTrap(std::string n)
     AttackDamage = 0;
     HitPoint = 10;
     EnergyPoint = 10;
-    std::cout << "name Constructor called, name is " << name << std::endl;
+    std::cout << "ClapTrap : name Constructor called, name is " << name << std::endl;
 }
 
 ClapTrap& ClapTrap::operator=(const ClapTrap &obj)
@@ -16,7 +16,7 @@ ClapTrap& ClapTrap::operator=(const ClapTrap &obj)
     AttackDamage = obj.AttackDamage;
     HitPoint = obj.HitPoint;
     EnergyPoint = obj.EnergyPoint;
-    std::cout << "Operator = is called, name is " << name << std::endl;
+    std::cout << "ClapTrap : Operator = is called, name is " << name << std::endl;
     return *this;
 }
 
@@ -26,7 +26,7 @@ ClapTrap::ClapTrap(const ClapTrap& obj)
     AttackDamage = obj.AttackDamage;
     HitPoint = obj.HitPoint;
     EnergyPoint = obj.EnergyPoint;
-    std::cout << "Copy Constructor is called, name is " << name << std::endl;
+    std::cout << "ClapTrap : Copy Constructor is called, name is " << name << std::endl;
 }
 
 ClapTrap::ClapTrap()
@@ -35,12 +35,12 @@ ClapTrap::ClapTrap()
     AttackDamage = 0;
     HitPoint = 10;
     EnergyPoint = 10;
-    std::cout << "Defalut Constructor is called" << std::endl;
+    std::cout << "ClapTrap : Defalut Constructor is called" << std::endl;
 }
 
 ClapTrap::~ClapTrap()
 {
-    std::cout << "Defalut Destructor is called, name is " << name << std::endl; 
+    std::cout << "ClapTrap : Defalut Destructor is called, name is " << name << std::endl; 
 }
 
 void ClapTrap::attack(const std::string& target)
