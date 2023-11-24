@@ -8,11 +8,11 @@ int main()
     FragTrap B("Blackhole");
 
     B.attack("cahn");
-    A.takeDamage(20);
+    A.takeDamage(30);
     A.beRepaired(10);
     A.highFivesGuys();
     A.attack("Blackhole");
-    B.takeDamage(20);
+    B.takeDamage(30);
     B.beRepaired(50);
     B.highFivesGuys();
 }
