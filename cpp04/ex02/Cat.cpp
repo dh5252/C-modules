@@ -31,6 +31,11 @@ Cat::~Cat()
 
 Cat& Cat::operator=(const Cat &obj)
 {
+    if (this == &obj)
+    {
+        std::cout << "class [Cat] : = operator is called" << std::endl;
+        return *this;
+    }
     this->type = obj.type;
     if (obj.brain != NULL)
     {

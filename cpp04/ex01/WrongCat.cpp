@@ -21,6 +21,11 @@ WrongCat::~WrongCat()
 
 WrongCat& WrongCat::operator=(const WrongCat &obj)
 {
+    if (this == &obj)
+    {
+        std::cout << "class [WrongCat] : = operator is called" << std::endl;
+        return *this;
+    }
     this->type = obj.type;
     std::cout << "class [WrongCat] : = operator is called" << std::endl;
     return *this;

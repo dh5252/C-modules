@@ -20,6 +20,11 @@ WrongAnimal::WrongAnimal(const WrongAnimal& obj)
 
 WrongAnimal& WrongAnimal::operator=(const WrongAnimal &obj)
 {
+    if (this == &obj)
+    {
+        std::cout << "class [WrongAnimal] : = operator called" << std::endl;
+        return *this;
+    }
     this->type = obj.type;
     std::cout << "class [WrongAnimal] : = operator called" << std::endl;
     return *this;

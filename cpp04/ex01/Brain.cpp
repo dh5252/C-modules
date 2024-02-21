@@ -21,6 +21,11 @@ Brain::Brain(const Brain& obj)
 
 Brain& Brain::operator=(const Brain& obj)
 {
+    if (this == &obj) 
+    {
+        std::cout << "class [Brain] : = operator is called" << std::endl;
+        return *this;
+    }
     for (int i = 0 ; i < 100 ; ++i)
         this->ideas[i] = obj.ideas[i];
     std::cout << "class [Brain] : = operator is called" << std::endl;

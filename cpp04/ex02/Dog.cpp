@@ -31,6 +31,11 @@ Dog::~Dog()
 
 Dog& Dog::operator=(const Dog &obj)
 {
+    if (this == &obj)
+    {
+        std::cout << "class [Dog] : = operator is called" << std::endl;
+        return *this;
+    }
     this->type = obj.type;
     if (obj.brain != NULL)
     {
