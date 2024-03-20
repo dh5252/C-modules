@@ -1,6 +1,6 @@
 
 #ifndef _BUREAUCRAT_HPP
-# define _BRUEAUCRAT_HPP
+# define _BUREAUCRAT_HPP
 
 # include <iostream>
 
@@ -10,15 +10,14 @@ class Bureaucrat
         const std::string name;
         int grade;
     public :
-        Bureaucrat();
         Bureaucrat(std::string name, int grade);
         Bureaucrat(const Bureaucrat &obj);
-        Bureaucrat& operator=(const Bureaucrat &obj);
         ~Bureaucrat();
 
         std::string getName() const;
         int getGrade() const;
-        void modifyGrade(int delta);
+        void incrementGrade(unsigned int abs);
+        void decrementGrade(unsigned int abs);
 
         class GradeTooHighException : public std::exception
         {
