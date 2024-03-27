@@ -1,8 +1,11 @@
 
-#ifndef _BUREAUCRAT_HPP
-# define _BUREAUCRAT_HPP
+#ifndef BUREAUCRAT_HPP
+# define BUREAUCRAT_HPP
 
 # include <iostream>
+# include "Form.hpp"
+
+class Form;
 
 class Bureaucrat
 {
@@ -18,6 +21,7 @@ class Bureaucrat
         int getGrade() const;
         void incrementGrade(unsigned int abs);
         void decrementGrade(unsigned int abs);
+        void signForm(Form &form);
 
         class GradeTooHighException : public std::exception
         {
@@ -31,7 +35,7 @@ class Bureaucrat
         };
 };
 
-std::ostream& operator<<(std::ostream& os,  const Bureaucrat& obj);
+std::ostream& operator<<(std::ostream& os, const Bureaucrat& obj);
 
 
 #endif
