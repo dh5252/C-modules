@@ -4,7 +4,7 @@
 int main()
 {
     {
-        std::cout << "\n<Integrity Test>" << std::endl;
+        std::cout << "\n<Integrated Test>" << std::endl;
         Form A("formA", 10, 5);
         Bureaucrat B("BureaucratB", 10);
 
