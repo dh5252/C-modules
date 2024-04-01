@@ -14,9 +14,24 @@ int main()
         AForm *b = new RobotomyRequestForm("b");
         AForm *c = new PresidentialPardonForm("c");
 
+
         A.signForm(*a);
         A.executeForm(*a);
         A.executeForm(*b);
         A.executeForm(*c);
+
+        
+        A.signForm(*b);
+        A.signForm(*c);
+
+        A.executeForm(*b);
+        A.executeForm(*c);
+
+        A.decrementGrade(140);
+
+        A.executeForm(*a);
+        A.executeForm(*b);
+        A.executeForm(*c);
+
     }
 }
