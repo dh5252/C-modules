@@ -1,5 +1,5 @@
 
-SRC = main.cpp 
+SRC = main.cpp ScalarConverter.cpp
 OBJ = $(SRC:.cpp=.o)
 CXX = c++
 RM = rm -f

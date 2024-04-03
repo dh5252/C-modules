@@ -33,10 +33,17 @@ void ScalarConverter::convert(const std::string &input)
 
     std::cout << "float: ";
     if (std::isnan(val) || std::isinf(val))
-        std::cout << std::showpos << static_cast<float>(val) << "f" << std::endl;
+        std::cout << static_cast<float>(val) << "f" << std::endl;
     else if (static_cast<float>(val) == static_cast<int64_t>(static_cast<float>(val)))
         std::cout << static_cast<float>(val) << ".0f" << std::endl;
     else
-        std::cout << "float: " << std::setprecision(std::numeric_limits<float>::digits10) << static_cast<float>(val) << "f" << std::endl;
+        std::cout << std::setprecision(std::numeric_limits<float>::digits10) << static_cast<float>(val) << "f" << std::endl;
 
+    std::cout << "double: ";
+    if (std::isnan(val) || std::isinf(val))
+        std::cout << static_cast<double>(val) << std::endl;
+    else if (static_cast<double>(val) == static_cast<int64_t>(static_cast<double>(val)))
+        std::cout << static_cast<double>(val) << ".0" << std::endl;
+    else
+        std::cout << std::setprecision(std::numeric_limits<float>::digits10) << static_cast<double>(val) << std::endl;
 }
