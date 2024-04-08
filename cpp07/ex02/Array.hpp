@@ -4,6 +4,7 @@
 
 #include <iostream>
 #include <stdexcept>
+#include <cstdlib>
 
 template <typename T>
 class Array
@@ -61,10 +62,21 @@ class Array
 
         T& operator[] (long long i) {
             if (i < 0 || i >= len)
-                //exception
+                throw OutOfBounds();
+            return array[i];
         }
-        const T& operator[] (long long i) const;
-};
+        const T& operator[] (long long i) const {
+            if (i < 0 || i >= len)
+                throw OutOfBounds();
+            return array[i];
+        }
 
+        class OutOfBounds : public std::exception {
+            public:
+                const char *what() const throw() {
+                    return "OutOfRange";
+                }
+        };
+};
 
 #endif
