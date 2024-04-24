@@ -28,8 +28,6 @@ class BitcoinExchange
         ~BitcoinExchange();
         BitcoinExchange(std::string input);
         void execute();
-
-
 };
 
 #endif
