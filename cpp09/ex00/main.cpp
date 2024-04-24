@@ -9,5 +9,9 @@ int main(int argc, char **argv)
     }
     BitcoinExchange a(argv[1]);
 
-    a.execute();
+    try {
+        a.execute();
+    } catch (std::exception &e) {
+        std::cerr << e.what() << std::endl;
+    }
 }

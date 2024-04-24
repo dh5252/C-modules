@@ -15,10 +15,11 @@ class BitcoinExchange
 {
     private:
         std::string inputFile;
-        std::map<std::string, double> bitcoinData;
+        std::map<std::string, float> bitcoinData;
         void isValidDate(std::string date);
-        double getValue(std::string value);
+        float getValue(std::string value);
         void isValidDatabase();
+        void executeByInputFile();
 
     public:
         BitcoinExchange();
